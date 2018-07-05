@@ -1,0 +1,23 @@
+.select-user, .user-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputs-block {
+    display: block;
+    margin-top: 50px;
+}
+.user-block {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background: #ccc;
+    &.new-user {
+        font-size: 24px;
+    }
+}
+.inputs-block {
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+<div class="weigh-block">
+  <h2>Current weight:</h2> {{ weightValue ? weightValue : '' }}
+</div>
+<div class="user-block">
+  {{user.username}}
+  <mat-icon (click)="logout()">exit_to_app</mat-icon>
+</div>

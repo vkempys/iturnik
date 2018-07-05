@@ -1,0 +1,41 @@
+<ng-container *ngIf="loaded">
+  <div class="select-user">
+    <div class="user-block" *ngFor="let user of users" (click)="selectUser(user.name)">
+      {{user.username}}
+    </div>
+    <div class="user-block new-user" (click)="selectUser('')">Add new user</div>
+  </div>
+  <div class="inputs-block" *ngIf="showInputs">
+    <input autocomplete="off" name="hidden" type="text" style="display:none;">
+    <mat-input-container><input
+      type="text"
+      placeholder="Enter user name"
+      [(ngModel)]="userName"
+      matInput
+      autocomplete="off"
+      required>
+    </mat-input-container>
+    <mat-input-container><input
+      type="password"
+      placeholder="Enter password"
+      [(ngModel)]="userPass"
+      autocomplete="off"
+      matInput
+      required>
+    </mat-input-container>
+    <button
+      *ngIf="!isNewUser()"
+      (click)="login()"
+      [disabled]="!userName || !userPass"
+      mat-raised-button
+      color="primary"
+    >Login</button>
+    <button
+      *ngIf="isNewUser()"
+      (click)="signup()"
+      [disabled]="!userName || !userPass"
+      mat-raised-button
+      color="primary"
+    >Signup</button>
+  </div>
+</ng-container>
